@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Music Player</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <section class="player" aria-label="Music player">
+    <div class="now-playing" aria-live="polite" aria-atomic="true">
+      <div class="song-title" id="song-title">Loading...</div>
+      <div class="artist" id="artist-name">Please wait</div>
+    </div>
+    <img src="" alt="Album artwork" class="album-art" id="album-art" / src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/936ea6a0-14c8-49c7-a834-005807881635.png">
+    <audio id="audio" preload="metadata"></audio>
+    <div class="progress-container" id="progress-container" aria-label="Audio progress bar" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="time">
+      <span id="current-time">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+    <div class="controls" role="group" aria-label="Audio controls">
+      <button type="button" id="prev-btn" class="control-btn" title="Previous Track" aria-label="Previous Track">
+        <span class="material-icons">skip_previous</span>
+      </button>
+      <button type="button" id="play-btn" class="control-btn" title="Play/Pause" aria-label="Play/Pause">
+        <span class="material-icons" id="play-icon">play_arrow</span>
+      </button>
+      <button type="button" id="next-btn" class="control-btn" title="Next Track" aria-label="Next Track">
+        <span class="material-icons">skip_next</span>
+      </button>
+    </div>
+    <div class="volume-container" aria-label="Volume control">
+      <span id="volume-icon" class="material-icons volume-icon" title="Mute/Unmute" role="button" tabindex="0">volume_up</span>
+      <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" aria-valuemin="0" aria-valuemax="1" aria-valuenow="1" />
+    </div>
+    <div class="playlist" aria-label="Playlist" id="playlist" tabindex="0" role="list">
+      <!-- Playlist items inserted dynamically -->
+    </div>
+  </section>
+  <script src="script.js"></script>
+  </body>
+</html>
+
