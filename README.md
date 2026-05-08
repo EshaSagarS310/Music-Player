@@ -49,42 +49,6 @@ PulseBeat is optimized for:
 🔗 https://eshasagars310.github.io/Music-Player/
 
 
-# 📁 Project Structure
-
-music-app/
-│
-├── index.html
-├── style.css
-├── app.js
-│
-├── pages/
-├── home.html
-├── playlist.html
-├── favorites.html
-├── profile.html
-└── settings.html
-│
-├── components/
-├── sidebar.js
-├── player.js
-├── cards.js
-├── search.js
-├── theme.js
-└── storage.js
-│
-├── music/
-├── song1.mp3
-├── song2.mp3
-└── song3.mp3
-│
-├── images/
-├── cover1.jpg
-├── cover2.jpg
-├── cover3.jpg
-├── banner.png
-└── profile.jpg
-
-
 # 🚫 No Backend Used
 
 This project is completely frontend-only.
