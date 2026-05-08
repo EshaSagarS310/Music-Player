@@ -7,20 +7,35 @@ Designed with futuristic neon gradients, glassmorphism UI, and immersive animati
 ## ✨ Features
 
 🎧 Advanced Music Player
+
 🎵 Play / Pause / Next / Previous
+
 📊 Dynamic Progress Bar & Seek Control
+
 🔊 Volume Control
+
 🔁 Shuffle & Repeat Modes
+
 💿 Rotating Album Artwork
+
 🎚 Animated Equalizer
+
 🌙 Dark & Light Theme
+
 📱 Fully Responsive Design
+
 ❤️ Favorite Songs System
+
 📂 Custom Playlists
+
 🕒 Recently Played Songs
+
 🔍 Live Search Filtering
+
 ⚡ Toast Notifications
+
 ✨ Smooth Animations & Hover Effects
+
 🎨 Glassmorphism + Neon UI
 
 ## 🛠 Technologies Used
