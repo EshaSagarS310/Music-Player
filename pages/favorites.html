@@ -1,0 +1,33 @@
+<div class="page-header" style="margin-bottom: 2rem;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Your <span class="neon-text">Favorites</span></h1>
+    <p style="color: var(--text-secondary);">All your loved tracks in one place.</p>
+</div>
+
+<!-- Grid for liked songs -->
+<div id="favorites-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem;">
+    <!-- Cards get injected here by app.js -->
+</div>
+
+<!-- Empty State (Shows when no songs are liked) -->
+<div id="no-favorites-message" style="display: none; text-align: center; padding: 4rem 0;">
+    <div class="glass-panel" style="display: inline-block; padding: 3rem; border-radius: 24px;">
+        <i class="fa-regular fa-heart" style="font-size: 4rem; color: var(--secondary-color); margin-bottom: 1rem; opacity: 0.5;"></i>
+        <h2 style="margin-bottom: 10px;">No favorites yet</h2>
+        <p style="color: var(--text-secondary);">Play a song and click the heart icon below <br>to add it to your collection.</p>
+    </div>
+</div>
+
+<style>
+/* Scoped styles specifically for cards on this page */
+.song-card {
+    padding: 15px; border-radius: 16px; cursor: pointer; transition: 0.3s;
+}
+.song-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(255, 0, 85, 0.15); border-color: rgba(255, 0, 85, 0.3); }
+.card-img-wrapper { position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 15px; aspect-ratio: 1; }
+.card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+.play-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center; opacity:0; transition:0.3s; font-size:2rem; color: var(--primary-color);}
+.song-card:hover .card-img-wrapper img { transform: scale(1.1); }
+.song-card:hover .play-overlay { opacity: 1; }
+.song-card h3 { font-size: 1rem; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.song-card p { font-size: 0.8rem; color: var(--text-secondary); }
+</style>

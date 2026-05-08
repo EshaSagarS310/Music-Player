@@ -1,0 +1,100 @@
+/* Page Transitions */
+.fade-in-page {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Rotating Album Art */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.album-art.playing {
+    animation: rotate 15s linear infinite;
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+/* Neon Pulse Effect for Play Button */
+.neon-glow {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
+    }
+    50% {
+        box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
+    }
+}
+
+/* Hover Shine Effect for Music Cards */
+.song-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.song-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.song-card:hover::after {
+    left: 100%;
+    top: 100%;
+}
+
+/* Smooth Sidebar Link Animation */
+.nav-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:active {
+    transform: scale(0.95);
+}
+
+/* Equalizer Bars Animation (Optional: if you add an equalizer icon) */
+.playing-bars span {
+    display: inline-block;
+    width: 3px;
+    height: 10px;
+    margin: 0 1px;
+    background: var(--primary-color);
+    animation: eq 0.8s infinite alternate;
+}
+
+@keyframes eq {
+    from { height: 5px; }
+    to { height: 15px; }
+}

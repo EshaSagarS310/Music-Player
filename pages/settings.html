@@ -1,0 +1,32 @@
+<h1 style="margin-bottom: 2rem;">App Settings</h1>
+
+<div class="glass-panel" style="padding: 2rem; border-radius: 20px; max-width: 600px;">
+    <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Appearance</h3>
+    
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <div>
+            <h4>Theme</h4>
+            <p style="font-size:0.8rem; color:var(--text-secondary);">Switch between Dark and Light mode</p>
+        </div>
+        <button id="theme-toggle" class="glass-panel" style="padding: 10px 20px; border:none; color:var(--text-primary); cursor:pointer; border-radius: 10px;">
+            <i class="fa-solid fa-moon"></i> Toggle Theme
+        </button>
+    </div>
+
+    <hr style="border:0; height:1px; background:var(--glass-border); margin: 2rem 0;">
+
+    <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Data</h3>
+    <button onclick="localStorage.clear(); location.reload();" style="background:var(--secondary-color); color:#fff; border:none; padding:10px 20px; border-radius:10px; cursor:pointer;">
+        Reset All App Data
+    </button>
+</div>
+
+<script>
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+        let set = Storage.getSettings();
+        set.theme = set.theme === 'dark' ? 'light' : 'dark';
+        Storage.saveSettings(set);
+        document.documentElement.setAttribute('data-theme', set.theme);
+        showToast(`Theme changed to ${set.theme}`);
+    });
+</script>

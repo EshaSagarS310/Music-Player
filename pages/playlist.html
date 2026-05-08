@@ -1,0 +1,73 @@
+<!-- VIEW 1: All Playlists (Library) -->
+<div id="library-view">
+    <div class="page-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+        <div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 5px;">Your <span class="neon-text">Library</span></h1>
+            <p style="color: var(--text-secondary);">Manage and listen to your custom collections.</p>
+        </div>
+        <button onclick="window.createPlaylist()" class="neon-glow" style="background: var(--primary-color); color: #000; font-weight: 600; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; transition: 0.3s;">
+            <i class="fa-solid fa-plus"></i> New Playlist
+        </button>
+    </div>
+
+    <div id="playlist-page-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; margin-bottom: 40px;">
+        <!-- JS will inject playlist cards here -->
+    </div>
+</div>
+
+<!-- VIEW 2: Inside a Specific Playlist (Hidden by default) -->
+<div id="playlist-detail-view" style="display: none;">
+    
+    <!-- Back Button -->
+    <button onclick="window.closePlaylist()" style="background: transparent; color: var(--text-secondary); border: none; font-size: 1rem; cursor: pointer; margin-bottom: 20px; transition: 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-secondary)'">
+        <i class="fa-solid fa-arrow-left"></i> Back to Library
+    </button>
+
+    <!-- Playlist Header (Spotify Style) -->
+    <div style="display: flex; align-items: flex-end; gap: 30px; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid var(--glass-border);">
+        <div style="width: 200px; height: 200px; background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(0, 0, 0, 0.5)); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);">
+            <i class="fa-solid fa-music" style="font-size: 5rem; color: var(--primary-color);"></i>
+        </div>
+        <div>
+            <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-secondary);">Playlist</p>
+            <h1 id="detail-title" style="font-size: 4rem; font-weight: 700; margin: 5px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 500px;">My Mix</h1>
+            <p style="color: var(--text-secondary); font-size: 1rem;">
+                Created by <span style="color: var(--text-primary); font-weight: 500;" id="detail-creator">User</span> • 
+                <span id="detail-count">0</span> songs
+            </p>
+        </div>
+    </div>
+
+    <!-- Song List Header -->
+    <div style="display: grid; grid-template-columns: 50px 2fr 1fr 50px; color: var(--text-secondary); font-size: 0.85rem; padding-bottom: 10px; border-bottom: 1px solid var(--glass-border); margin-bottom: 15px;">
+        <span style="text-align: center;">#</span>
+        <span>Title</span>
+        <span>Genre</span>
+        <span style="text-align: center;"><i class="fa-regular fa-clock"></i></span>
+    </div>
+
+    <!-- List of Songs will be injected here -->
+    <div id="playlist-songs-container"></div>
+</div>
+
+<style>
+/* Modern Track Row Styling */
+.track-row {
+    display: grid; 
+    grid-template-columns: 50px 2fr 1fr 50px; 
+    align-items: center; 
+    padding: 10px 0; 
+    border-radius: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.track-row:hover {
+    background: var(--glass-bg);
+}
+.track-num { text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
+.track-row:hover .track-num { display: none; }
+.track-play-icon { display: none; text-align: center; color: var(--primary-color); }
+.track-row:hover .track-play-icon { display: block; }
+.track-remove-btn { color: var(--text-secondary); background: none; border: none; cursor: pointer; opacity: 0; transition: 0.3s; }
+.track-row:hover .track-remove-btn { opacity: 1; color: var(--secondary-color); }
+</style>

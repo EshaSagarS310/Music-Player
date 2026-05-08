@@ -1,0 +1,132 @@
+/* Tablet and Mobile Optimizations */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 0px; /* Hide desktop sidebar space */
+        --player-height: 80px;
+    }
+
+    .app-container {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        flex-direction: column; /* Stack vertically if needed */
+    }
+
+    /* Hide Desktop Sidebar */
+    .sidebar {
+        display: none;
+    }
+
+    /* Create a Mobile Bottom Navigation instead */
+    .nav-menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+        z-index: 2000;
+        border-top: 1px solid var(--glass-border);
+    }
+
+    .nav-link {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 0.7rem;
+        padding: 5px;
+        box-shadow: none !important;
+    }
+
+    .nav-link i {
+        font-size: 1.2rem;
+    }
+
+    /* Adjust Main Content */
+    .main-content {
+        padding: 1rem;
+        padding-bottom: 150px; /* Space for player + bottom nav */
+    }
+
+    /* Adjust Grid Columns */
+    #trending-grid, #favorites-grid, #playlist-page-container {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    /* Adjust Music Player for Mobile */
+    .music-player {
+        bottom: 70px; /* Sits above the mobile bottom nav */
+        height: 70px;
+        padding: 0 1rem;
+    }
+
+    .player-track-info {
+        width: 50%;
+    }
+
+    .album-art {
+        width: 45px;
+        height: 45px;
+    }
+
+    .track-details h4 {
+        font-size: 0.85rem;
+    }
+
+    .player-controls-container {
+        width: 40%;
+    }
+
+    /* Hide non-essential controls on small screens */
+    #shuffle-btn, #repeat-btn, .player-actions, #current-time, #total-time {
+        display: none;
+    }
+
+    .progress-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .progress-bar {
+        height: 3px;
+        border-radius: 0;
+    }
+
+    .play-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 480px) {
+    .page-header h1 {
+        font-size: 1.8rem !important;
+    }
+
+    #trending-grid {
+        grid-template-columns: 1fr 1fr !important; /* Force 2 columns */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        padding: 0;
+    }
+    .logo {
+        display: none; /* Hide logo on mobile to save space */
+    }
+}
